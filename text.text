@@ -1,0 +1,57 @@
+إنشاء مجلد جديد:
+mkdir {directory_name}
+نضيف مكان {directory_name} اسم المجلد الجديد.
+
+تثبيت جانغو Django:
+pipenv install django
+تفعيل البيئة الإفتراضية:
+pipenv shell
+إنشاء مشروع جانغو جديد:
+django-admin startproject {project_name} .
+نضيف مكان {project_name} اسم مشروع جانغو.
+
+تشغيل مشروع جانغو:
+python .\manage.py runserver
+إنشاء تطبيق جانغو:
+python .\manage.py startapp {app_name}
+نضيف مكان {app_name} اسم تطبيق جانغو.
+
+رابط موقع GitHub.
+تهيئة المستودع المحلي:
+git init
+إضافة الملفات والمستودعات إلى المستودع:
+git add .
+إيداع التغييرات:
+git commit -m "{message}"
+نضيف مكان {message} رسالة وصف.
+
+تحديد الفرع branch:
+git branch -M {branch_name}
+نضيف مكان {branch_name} اسم الفرع.
+
+إضافة رابط المستودع البعيد:
+git remote add origin {repo_url}
+نضيف مكان {repo_url} رابط المستودع البعيد.
+
+رفع التغييرات:
+git push origin {branch_name}
+نضيف مكان {branch_name} اسم الفرع.
+
+
+
+تثبيت مكتبة Pillow:
+pip install Pillow
+إنشاء ملفات التهجير:
+python .\manage.py makemigrations
+تطبيق ملفات التهجير:
+python .\manage.py migrate
+رابط تحميل DB Browser for SQLite.
+
+
+إنشاء مستخدم superuser يملك صلاحيات المدير:
+
+python .\manage.py createsuperuser
+رابط ملف base.html المستخدم في الدرس
+
+
+{{ '!DOCTYPE html>' }}
