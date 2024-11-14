@@ -55,3 +55,9 @@ python .\manage.py createsuperuser
 
 
 {{ '!DOCTYPE html>' }}
+
+
+يستخدم المرشح stringformat لتنسيق المتغير وتحويله إلى سلسلة نصية وفقًا لمحدد تنسيق معين.
+
+
+
