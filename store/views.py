@@ -1,5 +1,7 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
-from .models import Product, Slider
+from .models import Product, Slider, Category
+
 
 def index(request):
     products = Product.objects.select_related('author').filter(featured=True)
@@ -18,8 +20,24 @@ def product(request, pid):
     )
 
 def category(request, cid=None):
+    cat = None
+
+    where = {}
+
+    if cid:
+        cat =Category.objects.get(pk=cid)
+        where['category_id'] = cid
+
+    products = Product.objects.filter(**where)
+    paginator = Paginator(products, 2)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     return render(
-        request, 'category.html'
+        request, 'category.html',{
+            'page_obj': page_obj,
+            'category': cat,
+        }
     )
 
 def cart(request):
