@@ -60,4 +60,9 @@ python .\manage.py createsuperuser
 يستخدم المرشح stringformat لتنسيق المتغير وتحويله إلى سلسلة نصية وفقًا لمحدد تنسيق معين.
 
 
+إنشاء المهجرات:
+python .\manage.py makemigrations
+تطبيق ملفات التهجير:
+python .\manage.py migrate
+رابط مكتبة Axios.
 
