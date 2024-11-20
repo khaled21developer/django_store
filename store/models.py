@@ -1,3 +1,4 @@
+from django.contrib.sessions.models import Session
 from django.db import models
 
 class Category(models.Model):
@@ -52,6 +53,10 @@ class OrderProduct(models.Model):
     price=models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+
+class Cart(models.Model):
+    items = models.JSONField(default=dict)
+    session = models.ForeignKey(Session, on_delete=models.CASCADE)
 
 class Slider(models.Model):
     title = models.CharField(max_length=255)
