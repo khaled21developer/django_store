@@ -66,3 +66,38 @@ python .\manage.py makemigrations
 python .\manage.py migrate
 رابط مكتبة Axios.
 
+
+رابط موقع Mailtrap.
+تستخدم الدالة send_mail لإرسال بريد إلكتروني.
+
+
+إنشاء ملفات التهجير:
+python .\manage.py makemigrations
+تطبيق ملفات التهجير:
+python .\manage.py migrate
+
+
+تفعيل البيئة الإفتراضية:
+pipenv shell
+تثبيت حزمة Stripe:
+pip install stripe
+
+
+رابط ملف stripe.js.
+رابط بطاقات التجربة ذات الحماية ثلاثية الأبعاد.
+
+
+https://docs.stripe.com/testing#regulatory-cards
+
+
+https://dashboard.stripe.com
+
+
+يعمل المزخرف csrf_exempt@ على جعل دالة العرض معفاة من التحقق من CSRF TOKEN.
+توصيل أداة stripe-cli بحساب stripe:
+stripe login
+الإستماع للأحداث:
+stripe listen --forward-to localhost:{port}/{webhook_url}
+
+
+

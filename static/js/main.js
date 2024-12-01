@@ -15,6 +15,11 @@ async function cartRemove(e) {
     location.reload()
 }
 
+function switchPaymentMethod(type, content) {
+   const stripeCard = document.getElementById('stripe-card');
+       stripeCard.style.display = 'block'
+
+}
 
 //async function cartUpdate(e) {
 //    try {
