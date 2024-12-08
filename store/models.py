@@ -55,7 +55,7 @@ class Order(models.Model):
         return self.customer['first_name'] + '' + self.customer['last_name']
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class OrderProduct(models.Model):

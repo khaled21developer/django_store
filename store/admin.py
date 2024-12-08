@@ -21,6 +21,6 @@ class SliderAdmin(admin.ModelAdmin):
     list_per_page = 20
 
 
-@admin.register(models.Slider)
-class SliderAdmin(admin.ModelAdmin):
+@admin.register(models.Order)
+class OrderAdmin(admin.ModelAdmin):
     list_per_page = 20
