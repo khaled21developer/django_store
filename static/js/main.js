@@ -17,31 +17,29 @@ async function cartRemove(e) {
 
 function switchPaymentMethod(type, content) {
    const stripeCard = document.getElementById('stripe-card');
+   const stripePaymentElement = document.getElementById('payment-element');
+   const paypalCard = document.getElementById('paypal-card');
+   if (type === 'stripe') {
+       paypalCard.style.display = 'none'
        stripeCard.style.display = 'block'
-
+       paypalCard.innerHTML = ''
+   } else {
+       stripeCard.style.display = 'none'
+       paypalCard.style.display = 'block'
+       stripePaymentElement.innerHTML = ''
+       paypalCard.innerHTML = content
+   }
 }
 
-//async function cartUpdate(e) {
-//    try {
-//        const { data } = await axios(e.dataset.url);
-//        const { message, items_count } = data;
-//
-//        notyf.success({
-//            message,
-//            dismissible: true,
-//            icon: false
-//        });
-//
-//        document.getElementById('cart-items-count').innerHTML = items_count;
-//    } catch (error) {
-//        // التعامل مع الأخطاء
-//        console.error('Error adding item to cart:', error);
-//
-//        // إظهار رسالة خطأ للمستخدم
-//        notyf.error({
-//            message: 'There was an error adding the item to your cart. Please try again.',
-//            dismissible: true,
-//            icon: false
-//        });
-//    }
-//}
+async function createPaypalSession() {
+   try {
+       const form = document.getElementById('form-user-info');
+       const formData = new FormData(form);
+       const { data } = await axios.post("/checkout/paypal", formData);
+       switchPaymentMethod('paypal', data)
+   } catch (e) {
+       notyf.error(e.response.data.message);
+   }
+ }
+
+

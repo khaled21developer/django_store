@@ -99,5 +99,19 @@ stripe login
 الإستماع للأحداث:
 stripe listen --forward-to localhost:{port}/{webhook_url}
 
+يعمل المزخرف csrf_exempt@ على جعل دالة العرض معفاة من التحقق من CSRF TOKEN.
+توصيل أداة stripe-cli بحساب stripe:
+stripe login
+الإستماع للأحداث:
+stripe listen --forward-to localhost:{port}/{webhook_url}
+نضيف مكان {port} رقم المنفذ الخاص بالخادم المحلي لمشروع جانغو، ومكان {webhook_url} عنوان الخطاف.
+
+
+رابط صفحة المطورين في PayPal.
+تثبيت حزمة بايثون django-paypal:
+pip install django-paypal
+رابط ملف main.js.
+
+
 
 

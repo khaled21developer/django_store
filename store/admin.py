@@ -19,3 +19,8 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(models.Slider)
 class SliderAdmin(admin.ModelAdmin):
     list_per_page = 20
+
+
+@admin.register(models.Slider)
+class SliderAdmin(admin.ModelAdmin):
+    list_per_page = 20

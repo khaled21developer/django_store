@@ -8,7 +8,9 @@ async function createStripeSession() {
   const form = document.getElementById('form-user-info');
   const formData = new FormData(form);
 
-  stripeSubmit.disabled = false;
+  switchPaymentMethod('stripe', '')
+
+  stripeSubmit.disabled = true;
   try {
     const { data } = await axios.post("/checkout/stripe", formData)
     const { client_secret } = data;
