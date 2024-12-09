@@ -33,7 +33,11 @@
         <div class="form-row">
             <div>
                 <label>{% trans 'Amount' %}:</label>
-                <div class="readonly">{{ original.transaction.amount|currency }}</div>
+                <div class="readonly">
+                    {% if original.transaction %}
+                    {{ original.transaction.amount|currency }}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </fieldset>

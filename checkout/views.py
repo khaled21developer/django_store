@@ -10,7 +10,7 @@ from django.template.loader import render_to_string
 from django.utils.translation import gettext as _
 import stripe
 from paypal.standard.forms import PayPalPaymentsForm
-
+from .webhooks import make_order
 
 def strip_config(request):
     return JsonResponse({
@@ -19,6 +19,7 @@ def strip_config(request):
 
 def strip_transaction(request):
     transaction = make_transaction(request, PaymentMethod.Stripe)
+    make_order(transaction.id)
     if not transaction:
         return JsonResponse({
             'message': _('Please enter valid information.')
@@ -39,6 +40,7 @@ def strip_transaction(request):
 
 def paypal_transaction(request):
     transaction = make_transaction(request, PaymentMethod.Paypal)
+    make_order(transaction.id)
     if not transaction:
         return JsonResponse({
             'message': _('Please enter valid information.')
