@@ -113,5 +113,10 @@ pip install django-paypal
 رابط ملف main.js.
 
 
+إنشاء تطبيق جانغو:
+python .\manage.py startapp {app_name}
+نضيف مكان {app_name} اسم تطبيق جانغو.
+
+توثيق مكتبة ApexCharts.
 
 

@@ -46,5 +46,8 @@ class OrderAdmin(admin.ModelAdmin):
         return obj.transaction.get_payment_method_display() if obj.transaction else None
 
 
-
+@admin.register(models.OrderProduct)
+class OrderProductAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
 

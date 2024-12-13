@@ -56,6 +56,7 @@
         <tr>
             <th>{% trans 'Name' %}</th>
             <th>{% trans 'Price' %}</th>
+            <th>{% trans 'Action' %}</th>
         </tr>
         </thead>
         {% for item in original.orderproduct_set.all %}
@@ -63,6 +64,7 @@
         <tr>
             <td>{{ item.product.name }}</td>
             <td>{{ item.price }}</td>
+            <td><a href="/admin/store/orderproduct/{{item.id}}/delete/" class="button">حذف</a></td>
         </tr>
         </tbody>
         {% endfor %}
