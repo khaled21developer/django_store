@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-13 22:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\store\templates\admin\store\order\change_form.html:8
+#: .\store\templates\emails\order.html:59
+msgid "Customer"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:17
+#: .\store\templates\checkout.html:54
+msgid "Email"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:26
+#: .\store\templates\checkout.html:67
+msgid "Payment Method"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:35
+msgid "Amount"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:48
+#: .\store\templates\emails\order.html:83
+msgid "Date"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:57
+msgid "Name"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:58
+#: .\store\templates\cart.html:55 .\store\templates\emails\order.html:134
+msgid "Price"
+msgstr ""
+
+#: .\store\templates\admin\store\order\change_form.html:59
+msgid "Action"
+msgstr ""
+
+#: .\store\templates\base.html:9 .\store\templates\emails\order.html:49
+#: .\store\templates\partials\header.html:5
+msgid "App Name"
+msgstr ""
+
+#: .\store\templates\cart.html:7 .\store\templates\partials\header.html:23
+msgid "Cart"
+msgstr ""
+
+#: .\store\templates\cart.html:41
+msgid "Your cart is empty"
+msgstr ""
+
+#: .\store\templates\cart.html:59 .\store\templates\emails\order.html:173
+msgid "Total"
+msgstr ""
+
+#: .\store\templates\cart.html:66
+msgid "Proceed to checkout"
+msgstr ""
+
+#: .\store\templates\category.html:17
+msgid "All"
+msgstr ""
+
+#: .\store\templates\category.html:38
+msgid "We were not able to find any book."
+msgstr ""
+
+#: .\store\templates\category.html:49 .\store\templates\category.html:53
+msgid "Previous"
+msgstr ""
+
+#: .\store\templates\category.html:58 .\store\templates\category.html:62
+msgid "Next"
+msgstr ""
+
+#: .\store\templates\checkout.html:11
+msgid "Amount to pay"
+msgstr ""
+
+#: .\store\templates\checkout.html:17
+msgid "Your information"
+msgstr ""
+
+#: .\store\templates\checkout.html:26
+msgid "First Name"
+msgstr ""
+
+#: .\store\templates\checkout.html:40
+msgid "Last Name"
+msgstr ""
+
+#: .\store\templates\checkout.html:72
+msgid "Paypal"
+msgstr ""
+
+#: .\store\templates\checkout.html:80
+msgid "Credit Card"
+msgstr ""
+
+#: .\store\templates\checkout.html:93
+msgid "Pay Now"
+msgstr ""
+
+#: .\store\templates\common\product_card.html:12
+#: .\store\templates\product.html:28
+msgid "Add to cart"
+msgstr ""
+
+#: .\store\templates\common\product_card.html:15
+msgid "View"
+msgstr ""
+
+#: .\store\templates\emails\order.html:69
+msgid "Order"
+msgstr ""
+
+#: .\store\templates\emails\order.html:123
+msgid "Book"
+msgstr ""
+
+#: .\store\templates\partials\footer.html:4
+msgid "© 2024, All rights reserved."
+msgstr ""
+
+#: .\store\templates\partials\header_search.html:4
+msgid "Search"
+msgstr ""
+
+#: .\store\templates\partials\header_search.html:6
+msgid "All Categories"
+msgstr ""
+
+#: .\store\templates\product.html:54
+msgid "Description"
+msgstr ""
+
+#: .\store\templates\product.html:68
+msgid "Author"
+msgstr ""
+
+#: .\store\views.py:71
+msgid "The product has been added your cart."
+msgstr ""
+
+#: .\store\views.py:89
+msgid "The product has been removed from your cart."
+msgstr ""
