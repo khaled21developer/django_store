@@ -119,4 +119,12 @@ python .\manage.py startapp {app_name}
 
 توثيق مكتبة ApexCharts.
 
+عند رفع الموقع على السيرفر
+تثبيت حزمة Gunicorn:
+pip install gunicorn
+تثبيت حزمة WhiteNoise:
+pip install whitenoise
+إنشاء ملف المتطلبات:
+pip3 freeze > requirements.txt
 
+python manage.py collectstatic

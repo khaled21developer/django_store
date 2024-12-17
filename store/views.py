@@ -10,45 +10,45 @@ def index(request):
     slides = Slider.objects.order_by('order')
     return render(
         request, 'index.html',
-    {
-        'products': products,
-        'slides': slides,
-    }
-    )
-
-def product(request, pid):
-    product = Product.objects.get(pk=pid)
-    return render(
-        request, 'product.html',{
-            'product': product
+        {
+            'products': products,
+            'slides': slides
         }
     )
+
+
+def product(request, pid):
+    model = Product.objects.get(pk=pid)
+    return render(
+        request, 'product.html',
+        {
+            'product': model
+        }
+    )
+
 
 def category(request, cid=None):
     cat = None
 
-    query = request.GET.get('query')
     cid = request.GET.get('category', cid)
 
     where = {}
     if cid:
         cat = Category.objects.get(pk=cid)
-        where['category_id'] = cid  # يجب أن نضع هنا الـ category_id
-
-    if query:
-        where['name__icontains'] = query  # استخدم name__icontains بدلاً من name_icontains
+        where['category_id'] = cid
 
     products = Product.objects.filter(**where)
-    paginator = Paginator(products, 2)
+    paginator = Paginator(products, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     return render(
-        request, 'category.html',{
+        request, 'category.html', {
             'page_obj': page_obj,
-            'category': cat,
+            'category': cat
         }
     )
+
 
 def cart(request):
     return render(
@@ -60,6 +60,7 @@ def cart_update(request, pid):
     if not request.session.session_key:
         request.session.create()
     session_id = request.session.session_key
+
     cart_model = Cart.objects.filter(session=session_id).last()
     if cart_model is None:
         cart_model = Cart.objects.create(session_id=session_id, items=[pid])
@@ -68,9 +69,10 @@ def cart_update(request, pid):
         cart_model.save()
 
     return JsonResponse({
-        'message': _('The product has been added your cart.'),
+        'message': _('The product has been added to your cart.'),
         'items_count': len(cart_model.items)
     })
+
 
 def cart_remove(request, pid):
     session_id = request.session.session_key
@@ -90,13 +92,16 @@ def cart_remove(request, pid):
         'items_count': len(cart_model.items)
     })
 
+
 def checkout(request):
     return render(
         request, 'checkout.html'
     )
+
 
 def checkout_complete(request):
     Cart.objects.filter(session=request.session.session_key).delete()
     return render(
         request, 'checkout-complete.html'
     )
+

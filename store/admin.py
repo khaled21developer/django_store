@@ -1,10 +1,11 @@
 from django.contrib import admin
-
 from . import models
+
 
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_per_page = 20
+
 
 @admin.register(models.Author)
 class AuthorAdmin(admin.ModelAdmin):
@@ -34,20 +35,14 @@ class OrderAdmin(admin.ModelAdmin):
         return False
 
     def amount(self, obj):
-        return obj.transaction.amount if obj.transaction else None
+        return obj.transaction.amount
 
     def items(self, obj):
-        return len(obj.transaction.items) if obj.transaction and obj.transaction.items else None
+        return len(obj.transaction.items)
 
     def email(self, obj):
-        return obj.transaction.customer_email if obj.transaction else None
+        return obj.transaction.customer_email
 
     def payment_method(self, obj):
-        return obj.transaction.get_payment_method_display() if obj.transaction else None
-
-
-@admin.register(models.OrderProduct)
-class OrderProductAdmin(admin.ModelAdmin):
-    def get_model_perms(self, request):
-        return {}
+        return obj.transaction.get_payment_method_display()
 
