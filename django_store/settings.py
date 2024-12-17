@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'store',
     'checkout',
     'reports',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,8 @@ USE_TZ = True
 # لاظهار وحفظ الصور في المجلد
 MEDIA_URL = '/static/media/'
 MEDIA_ROOT = BASE_DIR / 'static/media'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
 
 
 # Static files (CSS, JavaScript, Images)
