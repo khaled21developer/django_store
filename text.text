@@ -128,3 +128,6 @@ pip install whitenoise
 pip3 freeze > requirements.txt
 
 python manage.py collectstatic
+
+
+النهاية
