@@ -20,6 +20,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 #: .\checkout\forms.py:22
 msgid "Pay Now"
+<<<<<<< HEAD
 msgstr "ادفع الان"
 
 #: .\checkout\models.py:5
@@ -41,3 +42,26 @@ msgstr "بايبال"
 #: .\checkout\views.py:25 .\checkout\views.py:46
 msgid "Please enter valid information."
 msgstr "الرجاء إدخال معلومات صالحة."
+=======
+msgstr ""
+
+#: .\checkout\models.py:5
+msgid "Pending"
+msgstr ""
+
+#: .\checkout\models.py:6
+msgid "Completed"
+msgstr ""
+
+#: .\checkout\models.py:9
+msgid "Strip"
+msgstr ""
+
+#: .\checkout\models.py:10
+msgid "Paypal"
+msgstr ""
+
+#: .\checkout\views.py:25 .\checkout\views.py:46
+msgid "Please enter valid information."
+msgstr ""
+>>>>>>> 7a38c8bcb826fbb14c653ce429fcb8c86ca0ac61

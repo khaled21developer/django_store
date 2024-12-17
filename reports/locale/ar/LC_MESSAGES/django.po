@@ -20,6 +20,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 #: .\reports\admin.py:52
 msgid "Orders Report"
+<<<<<<< HEAD
 msgstr "تقارير الطلبات"
 
 #: .\reports\models.py:6
@@ -37,3 +38,22 @@ msgstr "المبيعات الشهرية"
 #: .\reports\templates\admin\reports\orders.html:13
 msgid "Sales Yearly"
 msgstr "المبيعات السنوية"
+=======
+msgstr ""
+
+#: .\reports\models.py:6
+msgid "Orders"
+msgstr ""
+
+#: .\reports\templates\admin\reports\orders.html:7
+msgid "Sales Weekly"
+msgstr ""
+
+#: .\reports\templates\admin\reports\orders.html:10
+msgid "Sales Monthly"
+msgstr ""
+
+#: .\reports\templates\admin\reports\orders.html:13
+msgid "Sales Yearly"
+msgstr ""
+>>>>>>> 7a38c8bcb826fbb14c653ce429fcb8c86ca0ac61
