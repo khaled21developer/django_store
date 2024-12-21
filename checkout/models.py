@@ -32,12 +32,4 @@ class Transaction(models.Model):
     def customer_email(self):
         return self.customer['email']
 
-    @property
-    def customer_country(self):
-        return self.customer['email']  # الحصول على الدولة
-
-    @property
-    def customer_phone(self):
-        return self.customer['email']  # الحصول على رقم الهاتف
-
 

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
 from .models import Transaction  # تأكد من استيراد نموذج Transaction
+from .models import SupportRequest
 
 
 @admin.register(models.Category)
@@ -30,7 +31,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_select_related = ['transaction']
 
     def country(self, obj):
-        return obj.transaction.customer_country  # عرض الدولة
+        return obj.country  # تأكد من أن هذه السمة موجودة في نموذج Transaction
 
     def phone(self, obj):
         return obj.transaction.customer_phone  # عرض رقم الهاتف
@@ -57,3 +58,10 @@ class OrderAdmin(admin.ModelAdmin):
 class OrderProductAdmin(admin.ModelAdmin):
     def get_model_perms(self, request):
         return {}
+
+
+@admin.register(SupportRequest)
+class SupportRequestAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'created_at']
+    list_filter = ['created_at']
+    search_fields = ['name', 'email', 'message']

@@ -3,6 +3,9 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.utils.translation import gettext as _
 from .models import Product, Slider, Category, Cart
+from django.shortcuts import render, redirect
+from .forms import SupportRequestForm
+from django.contrib import messages
 
 
 def index(request):
@@ -104,4 +107,22 @@ def checkout_complete(request):
     return render(
         request, 'checkout-complete.html'
     )
+
+
+from django.shortcuts import render
+from django.contrib import messages
+from .forms import SupportRequestForm
+
+
+def support_request(request):
+    if request.method == 'POST':
+        form = SupportRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'تم إرسال الرسالة بنجاح!')
+            form = SupportRequestForm()  # إعادة تعيين النموذج الفارغ بعد الإرسال
+    else:
+        form = SupportRequestForm()
+
+    return render(request, 'support_request.html', {'form': form})
 
