@@ -10,6 +10,7 @@
             </div>
         </div>
     </fieldset>
+
     <fieldset class="module aligned mb-0">
         <div class="form-row">
             <div>
@@ -18,6 +19,7 @@
             </div>
         </div>
     </fieldset>
+
     <fieldset class="module aligned mb-0">
         <div class="form-row">
             <div>
@@ -26,37 +28,45 @@
             </div>
         </div>
     </fieldset>
+
     <fieldset class="module aligned mb-0">
         <div class="form-row">
             <div>
                 <label>{% trans 'Amount' %}:</label>
-                <div class="readonly">{{ original.transaction.amount|currency }}</div>
+                <div class="readonly">
+                    {% if original.transaction %}
+                    {{ original.transaction.amount|currency }}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </fieldset>
+
     <fieldset class="module aligned mb-0">
         <div class="form-row">
             <div>
                 <label>{% trans 'Date' %}:</label>
-                <div class="readonly">{{ original.created_at }}</div>
+                <div class="readonly">{{ original.transaction.created_at }}</div>
             </div>
         </div>
     </fieldset>
-    <h1>{% trans 'Products' %}</h1>
+
     <table style="min-width: 600px">
         <thead>
-            <tr>
-                <th>{% trans 'Name' %}</th>
-                <th>{% trans 'Price' %}</th>
-            </tr>
+        <tr>
+            <th>{% trans 'Name' %}</th>
+            <th>{% trans 'Price' %}</th>
+            <th>{% trans 'Action' %}</th>
+        </tr>
         </thead>
         {% for item in original.orderproduct_set.all %}
-            <tbody>
-                <tr>
-                    <td>{{ item.product.name }}</td>
-                    <td>{{ item.price }}</td>
-                </tr>
-            </tbody>
+        <tbody>
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.price }}</td>
+            <td><a href="/admin/store/orderproduct/{{item.id}}/delete/" class="button">حذف</a></td>
+        </tr>
+        </tbody>
         {% endfor %}
     </table>
 {% endblock %}

@@ -19,11 +19,12 @@ def strip_config(request):
 
 def strip_transaction(request):
     transaction = make_transaction(request, PaymentMethod.Stripe)
-    make_order(transaction.id)
     if not transaction:
         return JsonResponse({
             'message': _('Please enter valid information.')
         }, status=400)
+    make_order(transaction.id)
+    
     stripe.api_key = settings.STRIPE_SECRET_KEY
     intent = stripe.PaymentIntent.create(
         amount=transaction.amount * 100,
@@ -40,20 +41,20 @@ def strip_transaction(request):
 
 def paypal_transaction(request):
     transaction = make_transaction(request, PaymentMethod.Paypal)
-    make_order(transaction.id)
     if not transaction:
         return JsonResponse({
             'message': _('Please enter valid information.')
         }, status=400)
+    make_order(transaction.id)
 
     form = MyPayPalPaymentsForm(initial={
         'business': settings.PAYPAL_EMAIL,
         'amount': transaction.amount,
         'invoice': transaction.id,
         'currency_code': settings.CURRENCY,
-        'return_url': f'http://{request.get_host()}{reverse('store.checkout_complete')}',
-        'cancel_url': f'http://{request.get_host()}{reverse('store.checkout')}',
-        'notify_url': f'http://{request.get_host()}{reverse('checkout.paypal-webhook')}',
+        'return_url': f'http://{request.get_host()}{reverse("store.checkout_complete")}',
+        'cancel_url': f'http://{request.get_host()}{reverse("store.checkout")}',
+        'notify_url': f'http://{request.get_host()}{reverse("checkout.paypal-webhook")}',
     })
     return HttpResponse(form.render())
 
@@ -70,6 +71,11 @@ def make_transaction(request, pm):
 
         if total <= 0:
             return None
+
+        customer_data = form.cleaned_data
+        # تأكد من إضافة الدولة ورقم الهاتف إلى بيانات العميل
+        customer_data['country'] = request.POST.get('country')  # إضافة الدولة
+        customer_data['phone'] = request.POST.get('phone')  # إضافة رقم الهاتف
 
         return Transaction.objects.create(
             customer=form.cleaned_data,

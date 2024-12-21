@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import models
+from .models import Transaction  # تأكد من استيراد نموذج Transaction
 
 
 @admin.register(models.Category)
@@ -24,9 +25,15 @@ class SliderAdmin(admin.ModelAdmin):
 
 @admin.register(models.Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'email', 'amount', 'payment_method', 'items', 'created_at']
+    list_display = ['id', 'email', 'amount', 'payment_method', 'country', 'phone', 'items', 'created_at']
     list_per_page = 20
     list_select_related = ['transaction']
+
+    def country(self, obj):
+        return obj.transaction.customer_country  # عرض الدولة
+
+    def phone(self, obj):
+        return obj.transaction.customer_phone  # عرض رقم الهاتف
 
     def has_change_permission(self, request, obj=None):
         return False
@@ -46,3 +53,7 @@ class OrderAdmin(admin.ModelAdmin):
     def payment_method(self, obj):
         return obj.transaction.get_payment_method_display()
 
+@admin.register(models.OrderProduct)
+class OrderProductAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}

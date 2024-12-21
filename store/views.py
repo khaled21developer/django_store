@@ -38,7 +38,7 @@ def category(request, cid=None):
         where['category_id'] = cid
 
     products = Product.objects.filter(**where)
-    paginator = Paginator(products, 9)
+    paginator = Paginator(products, 2)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 

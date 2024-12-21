@@ -86,18 +86,18 @@ WSGI_APPLICATION = 'django_store.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-
-
     'default': {
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'ecommerce',
-          'USER': 'postgres',
-          'PASSWORD': 'khaled2001',
-          'HOST': 'localhost',
-          'PORT': ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+
+
+    # 'default': {
+    #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #       'NAME': 'ecommerce',
+    #       'USER': 'postgres',
+    #       'PASSWORD': 'khaled2001',
+    #       'HOST': 'localhost',
+    #       'PORT': ''
     }
 }
 
@@ -135,10 +135,9 @@ USE_TZ = True
 # لاظهار وحفظ الصور في المجلد
 MEDIA_URL = '/static/media/'
 MEDIA_ROOT = BASE_DIR / 'static/media'
-WHITENOISE_AUTOREFRESH = True
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WHITENOISE_USE_FINDERS = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -170,3 +169,4 @@ PAUPAL_TEST = True
 PAYPAL_EMAIL = 'sb-xecgi34587383@business.example.com'
 
 CURRENCY = 'USD'
+
