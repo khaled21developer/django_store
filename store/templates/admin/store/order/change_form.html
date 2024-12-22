@@ -33,7 +33,7 @@
   <div class="form-row">
     <div>
       <label>{% trans 'Country Code' %}:</label>
-      <div class="readonly">{{ original.transaction.customer_country }}</div>
+      <div class="readonly">{{ original.transaction.customer.country }}</div>
     </div>
   </div>
 </fieldset>
@@ -41,7 +41,7 @@
   <div class="form-row">
     <div>
       <label>{% trans 'Phone' %}:</label>
-      <div class="readonly">{{ original.transaction.customer_phone }}</div>
+      <div class="readonly">{{ original.transaction.customer.phone }}</div>
     </div>
   </div>
 </fieldset>

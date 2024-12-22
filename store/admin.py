@@ -31,10 +31,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_select_related = ['transaction']
 
     def country(self, obj):
-        return obj.country  # تأكد من أن هذه السمة موجودة في نموذج Transaction
+        return obj.transaction.customer['country']  # تأكد من أن هذه السمة موجودة في نموذج Transaction
 
     def phone(self, obj):
-        return obj.transaction.customer_phone  # عرض رقم الهاتف
+        return obj.transaction.customer['phone']  # عرض رقم الهاتف
 
     def has_change_permission(self, request, obj=None):
         return False

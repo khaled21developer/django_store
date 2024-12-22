@@ -1,16 +1,70 @@
-<form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-        <label>الاسم:</label>
-        {{ form.name }}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج تواصل</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .form-group {
+            text-align: right; /* محاذاة النصوص إلى اليمين */
+        }
+        .alert {
+            display: none; /* إخفاء الرسالة بشكل افتراضي */
+            text-align: center; /* محاذاة النص إلى الوسط */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">تواصل معنا</h1>
+        <div id="success-message" class="alert alert-success" role="alert">
+            !تم الإرسال بنجاح
+        </div>
+        <form id="contact-form" method="post" onsubmit="return showSuccessMessage();">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">:الاسم</label>
+                {{ form.name|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="email">:البريد الإلكتروني</label>
+                {{ form.email|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="message">:الرسالة</label>
+                {{ form.message|add_class:"form-control" }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">إرسال</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label>البريد الإلكتروني:</label>
-        {{ form.email }}
-    </div>
-    <div class="form-group">
-        <label>الرسالة:</label>
-        {{ form.message }}
-    </div>
-    <button type="submit" class="btn btn-primary btn-block">إرسال</button>
-</form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showSuccessMessage() {
+            event.preventDefault(); // منع الإرسال الفعلي
+            document.getElementById('success-message').style.display = 'block'; // إظهار الرسالة
+            document.getElementById('contact-form').reset(); // مسح الحقول
+            return false; // منع إعادة تحميل الصفحة
+        }
+    </script>
+</body>
+</html>

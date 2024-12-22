@@ -66,9 +66,6 @@ class Order(models.Model):
     transaction = models.OneToOneField(Transaction, on_delete=models.PROTECT, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    city = models.CharField(max_length=100, blank=True, null=True)  # حقل المدينة
-    phone = models.CharField(max_length=15, blank=True, null=True)  # حقل الهاتف
 
     def __str__(self):
         return str(self.id)
