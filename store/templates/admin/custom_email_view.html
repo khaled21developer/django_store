@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div class="custom-email-view">
+    <h1>إرسال إيميل إلى المستخدمين</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">إرسال</button>
+        <a href=".." class="button">إلغاء</a>
+    </form>
+</div>
+{% endblock %}

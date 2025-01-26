@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-09 17:31+0200\n"
+"POT-Creation-Date: 2025-01-09 18:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,72 +16,71 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\store\models.py:19
 msgid "Category"
-msgstr "التصنيف"
+msgstr ""
 
 #: .\store\models.py:20
 msgid "Categories"
-msgstr "كل التصنيفات"
+msgstr ""
 
 #: .\store\models.py:33 .\store\templates\product.html:53
 msgid "Author"
-msgstr "الكاتب"
+msgstr ""
 
 #: .\store\models.py:34
 msgid "Authors"
-msgstr "الكاتب"
+msgstr ""
 
 #: .\store\models.py:58
 msgid "Product"
-msgstr "المنتجات"
+msgstr ""
 
 #: .\store\models.py:59
 msgid "Products"
-msgstr "المنتجات"
+msgstr ""
 
 #: .\store\models.py:75 .\store\templates\emails\order.html:38
 msgid "Order"
-msgstr "الطلب"
+msgstr ""
 
 #: .\store\models.py:76
 msgid "Orders"
-msgstr "الطلبات"
+msgstr ""
 
 #: .\store\models.py:91 .\store\templates\cart.html:6
 #: .\store\templates\partials\header.html:21
 msgid "Cart"
-msgstr "السلة"
+msgstr ""
 
 #: .\store\models.py:92
 msgid "Carts"
-msgstr "السلة"
+msgstr ""
 
 #: .\store\models.py:107
 msgid "Slider"
-msgstr "الشريحة"
+msgstr ""
 
 #: .\store\models.py:108
 msgid "Sliders"
-msgstr "الشرائح"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:8
 #: .\store\templates\emails\order.html:30
 msgid "Customer"
-msgstr "الزبون"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:17
 #: .\store\templates\checkout.html:43
 msgid "Email"
-msgstr "البريد"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:26
 #: .\store\templates\checkout.html:61
 msgid "Payment Method"
-msgstr "وسيلة الدفع"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:35
 msgid "Country Code"
@@ -93,21 +92,21 @@ msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:52
 msgid "Amount"
-msgstr "المبلغ"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:65
 #: .\store\templates\emails\order.html:44
 msgid "Date"
-msgstr "التاريخ"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:74
 msgid "Name"
-msgstr "الاسم"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:75
 #: .\store\templates\cart.html:48 .\store\templates\emails\order.html:65
 msgid "Price"
-msgstr "السعر"
+msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:76
 msgid "Action"
@@ -116,57 +115,55 @@ msgstr ""
 #: .\store\templates\base.html:9 .\store\templates\emails\order.html:20
 #: .\store\templates\partials\header.html:5
 msgid "App Name"
-msgstr "المتجر"
+msgstr ""
 
 #: .\store\templates\cart.html:34
 msgid "Your cart is empty"
-msgstr "السلة فارغة"
+msgstr ""
 
 #: .\store\templates\cart.html:52 .\store\templates\emails\order.html:85
 msgid "Total"
-msgstr "المجموع"
+msgstr ""
 
 #: .\store\templates\cart.html:59
 msgid "Procced to checkout"
-msgstr "متابعة إلى صفحة الدفع"
+msgstr ""
 
 #: .\store\templates\category.html:17
 msgid "All"
-msgstr "الكل"
+msgstr ""
 
 #: .\store\templates\category.html:37
 msgid "We were not able to find any book."
-msgstr "لم نتمكن من إيجاد أية منتجات"
+msgstr ""
 
 #: .\store\templates\category.html:48 .\store\templates\category.html:52
 msgid "Previous"
-msgstr "السابق"
+msgstr ""
 
 #: .\store\templates\category.html:57 .\store\templates\category.html:61
 msgid "Next"
-msgstr "التالي"
+msgstr ""
 
 #: .\store\templates\checkout.html:11
 msgid "Amount to pay"
-msgstr "المبلغ الواجب دفعه"
+msgstr ""
 
 #: .\store\templates\checkout.html:20
 msgid "Your information"
-msgstr "معلوماتك"
+msgstr ""
 
 #: .\store\templates\checkout.html:29
 msgid "First Name"
-msgstr "الاسم"
+msgstr ""
 
 #: .\store\templates\checkout.html:36
 msgid "Last Name"
-msgstr "الكنية"
+msgstr ""
 
 #: .\store\templates\checkout.html:49
-#, fuzzy
-#| msgid "Amount"
 msgid "Country"
-msgstr "المبلغ"
+msgstr ""
 
 #: .\store\templates\checkout.html:54
 msgid "Phone Number"
@@ -174,55 +171,61 @@ msgstr ""
 
 #: .\store\templates\checkout.html:68
 msgid "Paypal"
-msgstr "بايبال"
+msgstr ""
 
 #: .\store\templates\checkout.html:78
 msgid "Credit Card"
-msgstr "بطاقة ائتمانية"
+msgstr ""
 
 #: .\store\templates\checkout.html:91
 msgid "Pay Now"
-msgstr "ادفع الآن"
+msgstr ""
 
 #: .\store\templates\common\product_card.html:7
 #: .\store\templates\product.html:30
 msgid "Add to cart"
-msgstr "إضافة إلى السلة"
+msgstr ""
 
 #: .\store\templates\common\product_card.html:8
 msgid "View"
-msgstr "عرض"
+msgstr ""
 
 #: .\store\templates\emails\order.html:63
 msgid "Book"
-msgstr "المنتجات"
+msgstr ""
 
 #: .\store\templates\index.html:11
 msgid "Featured Books"
-msgstr "منتجات مميزة"
+msgstr ""
 
 #: .\store\templates\partials\footer.html:4
-#, fuzzy
-#| msgid "© 2022 Hsoub. All rights reserved."
 msgid "© 2024 khaledcodes. All rights reserved."
-msgstr "© 2022 حسوب. جميع الحقوق محفوظة."
+msgstr ""
+
+#: .\store\templates\partials\header.html:9
+msgid "دعم فني"
+msgstr ""
+
+#: .\store\templates\partials\header.html:26
+msgid "Language"
+msgstr ""
 
 #: .\store\templates\partials\header_search.html:4
 msgid "Search"
-msgstr "البحث"
+msgstr ""
 
 #: .\store\templates\partials\header_search.html:6
 msgid "All Categories"
-msgstr "كل التصنيفات"
+msgstr ""
 
 #: .\store\templates\product.html:45
 msgid "Description"
-msgstr "الوصف"
+msgstr ""
 
 #: .\store\views.py:75
 msgid "The product has been added to your cart."
-msgstr "تم إضافة المنتج إلى السلة."
+msgstr ""
 
 #: .\store\views.py:94
 msgid "The product has been removed from your cart."
-msgstr "تم إزالة المنتح من السلة."
+msgstr ""

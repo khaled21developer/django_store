@@ -130,4 +130,18 @@ pip3 freeze > requirements.txt
 python manage.py collectstatic
 
 
+python manage.py flush  # سيؤدي هذا إلى حذف جميع البيانات!
+python manage.py migrate
+
+
+ RTL من Bootstrap.
+رابط تنزيل gettext.
+إنشاء ملفات الترجمة:
+python .\manage.py makemessages -l {language_code}
+نضيف مكان {language_code} رمز اللغة. مثلاً: ar للغة العربية، en للغة الإنجليزية.
+
+تحويل ملفات الترجمة إلى ملفات لغة يقبلها جانغو:
+python .\manage.py compilemessages
+
+
 النهاية

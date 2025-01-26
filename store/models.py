@@ -38,7 +38,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     short_description = models.TextField(null=True)
     description = models.TextField(null=True)
-    pdf_file = models.FileField(null=True)
+    # pdf_file = models.FileField(null=True)
     image = models.ImageField()
     price = models.FloatField()
     featured = models.BooleanField(default=False)
@@ -47,12 +47,12 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
 
-    @property
-    def pdf_file_url(self):
-        return settings.SITE_URL + self.pdf_file.url
+    # @property
+    # def pdf_file_url(self):
+        # return settings.SITE_URL + self.pdf_file.url
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
     class Meta:
         verbose_name = _('Product')
@@ -64,6 +64,7 @@ class Customer(models.Model):
 
 class Order(models.Model):
     transaction = models.OneToOneField(Transaction, on_delete=models.PROTECT, null=True)
+    customer = models.ForeignKey(Customer, on_delete=models.PROTECT, null=True)  # إضافة علاقة مع Customer
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -113,4 +114,13 @@ class SupportRequest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Support request from {self.name} ({self.email})"
+        return self.name
+
+
+class Email(models.Model):
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    recipient = models.EmailField()
+
+    def __str__(self):
+        return self.subject

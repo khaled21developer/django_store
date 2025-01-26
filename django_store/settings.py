@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+# settings.py
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert alert-success',
+}
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -94,7 +101,7 @@ DATABASES = {
 
     'default': {
           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'ecommerce',
+          'NAME': 'mywork',
           'USER': 'postgres',
           'PASSWORD': 'khaled2001',
           'HOST': 'localhost',
@@ -159,9 +166,28 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Looking to send emails in production? Check out our Email API/SMTP product!
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'ba4352f194d6e2'
+EMAIL_HOST_USER  = 'ba4352f194d6e2'
 EMAIL_HOST_PASSWORD = 'de899e4150e40a'
 EMAIL_PORT = '2525'
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.your-email-provider.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your_email@example.com'  # ضع عنوان بريدك الإلكتروني هنا
+# EMAIL_HOST_PASSWORD = 'your-email-password'  # ضع كلمة مرور بريدك الإلكتروني هنا
+
+
+
+# settings.py
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'kh.hammad2022@gmail.com'  # بريدك الإلكتروني
+# EMAIL_HOST_PASSWORD = 'KRMHabo3ez2001'   # كلمة المرور الخاصة بك
+
 
 SITE_URL = 'http://127.0.0.1:8000'
 

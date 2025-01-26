@@ -37,7 +37,7 @@
         <div id="success-message" class="alert alert-success" role="alert">
             !تم الإرسال بنجاح
         </div>
-        <form id="contact-form" method="post" onsubmit="return showSuccessMessage();">
+        <form id="contact-form" method="post" onsubmit="return showSuccessMessage(event);">
             {% csrf_token %}
             <div class="form-group">
                 <label for="name">:الاسم</label>
@@ -59,11 +59,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function showSuccessMessage() {
+        function showSuccessMessage(event) {
             event.preventDefault(); // منع الإرسال الفعلي
-            document.getElementById('success-message').style.display = 'block'; // إظهار الرسالة
-            document.getElementById('contact-form').reset(); // مسح الحقول
-            return false; // منع إعادة تحميل الصفحة
+            const formData = new FormData(document.getElementById('contact-form'));
+
+            fetch('{% url "support_request" %}', { // تأكد من وضع رابط النموذج الصحيح
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}', // تأكد من إضافة CSRF token
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('success-message').style.display = 'block'; // إظهار الرسالة
+                    document.getElementById('contact-form').reset(); // مسح الحقول
+                }
+            })
+            .catch(error => console.error('Error:', error));
         }
     </script>
 </body>

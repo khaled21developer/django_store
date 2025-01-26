@@ -1,5 +1,4 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.utils.translation import gettext as _
 from .models import Product, Slider, Category, Cart
@@ -41,7 +40,7 @@ def category(request, cid=None):
         where['category_id'] = cid
 
     products = Product.objects.filter(**where)
-    paginator = Paginator(products, 2)
+    paginator = Paginator(products, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -109,11 +108,6 @@ def checkout_complete(request):
     )
 
 
-from django.shortcuts import render
-from django.contrib import messages
-from .forms import SupportRequestForm
-
-
 def support_request(request):
     if request.method == 'POST':
         form = SupportRequestForm(request.POST)
@@ -125,4 +119,3 @@ def support_request(request):
         form = SupportRequestForm()
 
     return render(request, 'support_request.html', {'form': form})
-

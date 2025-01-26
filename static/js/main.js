@@ -41,5 +41,3 @@ async function createPaypalSession() {
        notyf.error(e.response.data.message);
    }
  }
-
-

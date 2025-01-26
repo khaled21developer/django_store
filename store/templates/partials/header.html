@@ -5,24 +5,25 @@
             {% trans 'App Name' %}
         </a>
         <div class="text-center">
-    <a href="{% url 'support_request' %}" class="btn btn-info">
-        <i class="fas fa-headset"></i> دعم فني
-    </a>
-</div>
+            <a href="{% url 'support_request' %}" class="btn btn-info">
+                <i class="fas fa-headset"></i> {% trans 'دعم فني' %}
+            </a>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarSupportedContent">
-            {% include 'partials/header_search.html' %}
-            <ul class="navbar-nav my-2 my-lg-0">
-                <li class="nav-item">
-                    <a href="{% url 'store.cart' %}" class="btn btn-outline-dark" type="button">
-                        {% trans 'Cart' %} (<span id="cart-items-count">{{ cart_products|length }}</span>)
-                    </a>
-                </li>
-            </ul>
-        </div>
+       <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarSupportedContent">
+    {% include 'partials/header_search.html' %}
+    <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item">
+            <a href="{% url 'store.cart' %}" class="nav-link">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <span class="cart-count" id="cart-items-count">{{ cart_products|length }}</span> <!-- يمكنك إضافة عدد العناصر هنا إذا رغبت -->
+            </a>
+        </li>
+    </ul>
+</div>
     </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -41,3 +42,25 @@
     </div>
 </nav>
 
+<style>
+    .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 18px; /* حجم الخط */
+    color: #333; /* لون النص */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000; /* تغيير اللون عند التمرير */
+}
+
+.cart-count {
+    margin-left: 4px; /* المسافة بين الأيقونة والعدد */
+    font-size: 14px; /* حجم خط العد */
+    background: red; /* لون الخلفية */
+    color: white; /* لون النص */
+    border-radius: 50%; /* شكل دائري */
+    padding: 2px 6px; /* مساحة داخلية */
+    display: inline-block; /* عرض كتلة */
+}
+</style>

@@ -22,4 +22,3 @@ class MyPayPalPaymentsForm(PayPalPaymentsForm):
         </form>""", self.get_login_url(), self.as_p(),  _('Pay Now'))
         else:
             return super().render(*args, **kwargs)
-    
