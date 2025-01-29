@@ -1,24 +1,16 @@
 from django.contrib import admin
 from . import models
-from .models import Transaction  # تأكد من استيراد نموذج Transaction
 from .models import SupportRequest
-
-from django.core.mail import send_mail
-from .models import Email
-
-from django.contrib.auth.models import User
 from django.urls import path
 from django.shortcuts import render, redirect
 from .forms import EmailForm
 
 from django.contrib import admin
 from django.contrib.auth.models import User
+from .admin import CustomUserAdmin
 
 admin.site.unregister(User)
-
-# يظهر خطا في CustomUserAdmin
-# admin.site.register(User, CustomUserAdmin)
-admin.site.register(User)
+admin.site.register(User, CustomUserAdmin)
 
 
 @admin.register(models.Category)
@@ -84,23 +76,6 @@ class SupportRequestAdmin(admin.ModelAdmin):
     search_fields = ['name', 'email', 'message']
 
 
-@admin.action(description='Send selected emails')
-def send_selected_emails(modeladmin, request, queryset):
-    for email in queryset:
-        send_mail(
-            email.subject,
-            email.message,
-            'kh.hammad2022@gmail.com',  # ضع عنوان بريدك الإلكتروني هنا
-            [email.recipient],
-            fail_silently=False,
-        )
-
-@admin.register(Email)
-class EmailAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'recipient')
-    actions = [send_selected_emails]
-
-
 class CustomUserAdmin(admin.ModelAdmin):
     def get_urls(self):
         urls = super().get_urls()
@@ -134,4 +109,3 @@ class CustomUserAdmin(admin.ModelAdmin):
             'opts': self.model._meta,
         }
         return render(request, 'admin/custom_email_view.html', context)
-

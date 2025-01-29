@@ -1,6 +1,7 @@
 from django import forms
-from .models import SupportRequest
 from django.contrib.auth.models import User
+
+from .models import SupportRequest
 
 class SupportRequestForm(forms.ModelForm):
     class Meta:
