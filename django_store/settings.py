@@ -172,21 +172,6 @@ EMAIL_PORT = '2525'
 
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.your-email-provider.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'your_email@example.com'  # ضع عنوان بريدك الإلكتروني هنا
-# EMAIL_HOST_PASSWORD = 'your-email-password'  # ضع كلمة مرور بريدك الإلكتروني هنا
-
-
-
-# settings.py
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'kh.hammad2022@gmail.com'  # بريدك الإلكتروني
-# EMAIL_HOST_PASSWORD = 'KRMHabo3ez2001'   # كلمة المرور الخاصة بك
 
 
 SITE_URL = 'http://127.0.0.1:8000'

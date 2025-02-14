@@ -15,8 +15,5 @@ urlpatterns = [
     path('checkout', views.checkout, name='store.checkout'),
     path('checkout/complete', views.checkout_complete, name='store.checkout_complete'),
     path('support/', views.support_request, name='support_request'),
-
-    # path('send-email/', views.send_email, name='send_email'),
-    # path('email-success/', views.email_success, name='email_success'),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

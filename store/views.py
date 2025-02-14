@@ -113,9 +113,11 @@ def support_request(request):
         form = SupportRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'تم إرسال الرسالة بنجاح!')
-            form = SupportRequestForm()  # إعادة تعيين النموذج الفارغ بعد الإرسال
-    else:
-        form = SupportRequestForm()
+            return JsonResponse({'success': True, 'message': 'تم إرسال الرسالة بنجاح!'})
+        else:
+            error_messages = form.errors.as_json()  # تحويل الأخطاء إلى JSON
+            return JsonResponse({'success': False, 'errors': error_messages}, status=400)
 
+    form = SupportRequestForm()
     return render(request, 'support_request.html', {'form': form})
+

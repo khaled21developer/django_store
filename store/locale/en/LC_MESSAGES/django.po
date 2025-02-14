@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-09 18:14+0200\n"
+"POT-Creation-Date: 2025-02-05 10:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,8 +50,7 @@ msgstr ""
 msgid "Orders"
 msgstr ""
 
-#: .\store\models.py:91 .\store\templates\cart.html:6
-#: .\store\templates\partials\header.html:21
+#: .\store\models.py:91 .\store\templates\cart.html:7
 msgid "Cart"
 msgstr ""
 
@@ -104,7 +103,7 @@ msgid "Name"
 msgstr ""
 
 #: .\store\templates\admin\store\order\change_form.html:75
-#: .\store\templates\cart.html:48 .\store\templates\emails\order.html:65
+#: .\store\templates\cart.html:49 .\store\templates\emails\order.html:65
 msgid "Price"
 msgstr ""
 
@@ -112,20 +111,20 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: .\store\templates\base.html:9 .\store\templates\emails\order.html:20
+#: .\store\templates\base.html:11 .\store\templates\emails\order.html:20
 #: .\store\templates\partials\header.html:5
 msgid "App Name"
 msgstr ""
 
-#: .\store\templates\cart.html:34
+#: .\store\templates\cart.html:35
 msgid "Your cart is empty"
 msgstr ""
 
-#: .\store\templates\cart.html:52 .\store\templates\emails\order.html:85
+#: .\store\templates\cart.html:53 .\store\templates\emails\order.html:85
 msgid "Total"
 msgstr ""
 
-#: .\store\templates\cart.html:59
+#: .\store\templates\cart.html:60
 msgid "Procced to checkout"
 msgstr ""
 
@@ -206,10 +205,6 @@ msgstr ""
 msgid "دعم فني"
 msgstr ""
 
-#: .\store\templates\partials\header.html:26
-msgid "Language"
-msgstr ""
-
 #: .\store\templates\partials\header_search.html:4
 msgid "Search"
 msgstr ""
@@ -222,10 +217,10 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: .\store\views.py:75
+#: .\store\views.py:74
 msgid "The product has been added to your cart."
 msgstr ""
 
-#: .\store\views.py:94
+#: .\store\views.py:93
 msgid "The product has been removed from your cart."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-09 17:31+0200\n"
+"POT-Creation-Date: 2025-02-05 10:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,8 +51,7 @@ msgstr "الطلب"
 msgid "Orders"
 msgstr "الطلبات"
 
-#: .\store\models.py:91 .\store\templates\cart.html:6
-#: .\store\templates\partials\header.html:21
+#: .\store\models.py:91 .\store\templates\cart.html:7
 msgid "Cart"
 msgstr "السلة"
 
@@ -105,7 +104,7 @@ msgid "Name"
 msgstr "الاسم"
 
 #: .\store\templates\admin\store\order\change_form.html:75
-#: .\store\templates\cart.html:48 .\store\templates\emails\order.html:65
+#: .\store\templates\cart.html:49 .\store\templates\emails\order.html:65
 msgid "Price"
 msgstr "السعر"
 
@@ -113,20 +112,20 @@ msgstr "السعر"
 msgid "Action"
 msgstr ""
 
-#: .\store\templates\base.html:9 .\store\templates\emails\order.html:20
+#: .\store\templates\base.html:11 .\store\templates\emails\order.html:20
 #: .\store\templates\partials\header.html:5
 msgid "App Name"
 msgstr "المتجر"
 
-#: .\store\templates\cart.html:34
+#: .\store\templates\cart.html:35
 msgid "Your cart is empty"
 msgstr "السلة فارغة"
 
-#: .\store\templates\cart.html:52 .\store\templates\emails\order.html:85
+#: .\store\templates\cart.html:53 .\store\templates\emails\order.html:85
 msgid "Total"
 msgstr "المجموع"
 
-#: .\store\templates\cart.html:59
+#: .\store\templates\cart.html:60
 msgid "Procced to checkout"
 msgstr "متابعة إلى صفحة الدفع"
 
@@ -207,6 +206,10 @@ msgstr "منتجات مميزة"
 msgid "© 2024 khaledcodes. All rights reserved."
 msgstr "© 2022 حسوب. جميع الحقوق محفوظة."
 
+#: .\store\templates\partials\header.html:9
+msgid "دعم فني"
+msgstr ""
+
 #: .\store\templates\partials\header_search.html:4
 msgid "Search"
 msgstr "البحث"
@@ -219,10 +222,10 @@ msgstr "كل التصنيفات"
 msgid "Description"
 msgstr "الوصف"
 
-#: .\store\views.py:75
+#: .\store\views.py:74
 msgid "The product has been added to your cart."
 msgstr "تم إضافة المنتج إلى السلة."
 
-#: .\store\views.py:94
+#: .\store\views.py:93
 msgid "The product has been removed from your cart."
 msgstr "تم إزالة المنتح من السلة."
